@@ -1,38 +1,39 @@
-import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from 'react'
+import { Footer, Nav } from '../components'
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-function CheckOut() {
-  const location = useLocation();
-  const { cart, cartTotal } = location.state || { cart: [], totalCart: 0 };
-  const navigate = useNavigate();
-  const [paymentMethod, setPaymentMethod] = useState("Cash on Delivery");
-  const placeOrder = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const orderData = {
-      firstName: formData.get("firstName"),
-      companyName: formData.get("companyName"),
-      streetAddress: formData.get("streetAddress"),
-      apartment: formData.get("apartment"),
-      townCity: formData.get("townCity"),
-      phoneNumber: formData.get("phoneNumber"),
-      emailAddress: formData.get("emailAddress"),
-      cart: JSON.parse(localStorage.getItem("cart")) || [],
-      cartTotal: localStorage.getItem("cartTotal") || 0,
-      paymentMethod: paymentMethod,
-    };
-    const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
-    const updatedOrders = [...existingOrders, orderData];
-    localStorage.setItem("orders", JSON.stringify(updatedOrders));
-    localStorage.setItem("cart", JSON.stringify([]));
-    localStorage.removeItem("cartTotal");
-    alert("Your order has been successfully placed!");
-    navigate("/");
-  };
-
-  return (
-    <>
-      <div className="container my-5">
+function Checkout() {
+    const cartItems=useSelector((state)=>state.cart.cartProducts)
+    const cartTotal=cartItems?cartItems.reduce((total,item)=>total+item.price*item.quantity,0):0
+    const navigate = useNavigate();
+      const [paymentMethod, setPaymentMethod] = useState("Cash on Delivery");
+      const placeOrder = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const orderData = {
+          firstName: formData.get("firstName"),
+          companyName: formData.get("companyName"),
+          streetAddress: formData.get("streetAddress"),
+          apartment: formData.get("apartment"),
+          townCity: formData.get("townCity"),
+          phoneNumber: formData.get("phoneNumber"),
+          emailAddress: formData.get("emailAddress"),
+          cart: cartItems,
+          cartTotal: cartTotal,
+          paymentMethod: paymentMethod,
+        };
+        const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+        const updatedOrders = [...existingOrders, orderData];
+        localStorage.setItem("orders", JSON.stringify(updatedOrders));
+        localStorage.setItem("cart", JSON.stringify([]));
+        alert("Your order has been successfully placed!");
+        navigate("/orders");
+      };
+    return (
+        <>
+        <Nav/>
+        <div className="container my-5">
         <nav aria-label="breadcrumb" className="mb-4">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">Account</li>
@@ -150,18 +151,16 @@ function CheckOut() {
           <div className="col-lg-5">
             <div className="card">
               <div className="card-body">
-                {cart.map((product) => (
+                {cartItems.map((product) => (
                   <div className="d-flex justify-content-between mb-3">
-                    <div>
-                      <img
+                    <img
                         src={product.images[0]}
                         alt={product.title}
-                        style={{ width: "50px", height: "50px" }}
+                        style={{ width: "50px", height: "50px",margin:"0" }}
                       />
-                      <span className="ms-2">
+                      <span className="">
                         {product.title}({product.quantity})
                       </span>
-                    </div>
                     <span>
                       ${(product.price * product.quantity).toFixed(2)}
                     </span>
@@ -230,8 +229,9 @@ function CheckOut() {
           </div>
         </div>
       </div>
-    </>
-  );
+        <Footer/>
+        </>
+    )
 }
 
-export default CheckOut;
+export default Checkout

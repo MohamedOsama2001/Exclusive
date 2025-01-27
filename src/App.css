@@ -55,16 +55,22 @@
   font-size: 15px;
   padding: 5px 10px;
 }
-
-.card img {
-  width: 172px;
-  height: 152px;
-  object-fit: cover;
+.card img{
+  display: block;
+  width: 70%;
+  height: 100%;
+  margin: auto;
 }
-
+.flash-sales-timer{
+  justify-content: space-between;
+  align-items: center;
+}
 @media (max-width: 768px) {
-  .flash-sales-timer {
-    text-align: center;
+  .flash-sales-timer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
   }
 }
 

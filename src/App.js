@@ -1,37 +1,60 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+import './App.css'
 import './all.css';
-import Header from './Header';
-import Main from './Main';
-import Signup from "./Signup";
-import Login from "./Login";
-import Wishlist from "./Wishlist";
-import About from "./About";
-import Contact from "./Contact";
-import Cart from "./Cart";
-import CheckOut from "./CheckOut";
-import MyAccount from "./MyAccount";
-import Footer from "./Footer";
+import { About, Account, Cart, Checkout, Contact, Home, Login, Orders, SignUp, Whishlist, } from "./pages";
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Main/>}></Route>
-        <Route path="/signup" element={<Signup/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/wishlist" element={<Wishlist/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/cart" element={<Cart/>}></Route>
-        <Route path="/checkout" element={<CheckOut/>}></Route>
-        <Route path="/myaccount" element={<MyAccount/>}></Route>
-      </Routes>
-      <Footer/>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/about" element={<About/>}/>
+      <Route path="/cart" element={<Cart/>}/>
+      <Route path="/checkout" element={<Checkout/>}/>
+      <Route path="/favourites" element={<Whishlist/>}/>
+      <Route path="/orders" element={<Orders/>}/>
+      <Route path="/myaccount" element={<Account/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+////////////////////////////////////////////////////
+// public => assets for images
+//components:
+            /*
+            navbar.jsx
+            main.jsx
+            flashsales.jsx
+            categories.jsx
+            bestsellings.jsx
+            music.jsx
+            products.jsx
+            newarrival.jsx
+            footer.jsx
+            index.js 
+            */
+//pages
+             /*
+             Home.jsx
+             login.jsx
+             signup.jsx
+             wishlist.jsx
+             cart.jsx
+             checkout.jsx
+             account.jsx
+             about.jsx
+             contact.jsx
+             notfond.jsx
+             productItem.jsx
+             index.js
+             */ 
+//redux
+      /*
+      action => index.js
+      reducer =>handlecart.js , index.js
+      store.js
+      */

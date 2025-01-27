@@ -1,16 +1,27 @@
 import React from "react";
+import { Footer, Nav } from "../components";
 
 function About() {
   return (
     <>
+    <Nav/>
       {/* our story section */}
       <section>
         <div className="container my-5">
-            <div className="head">
-                <h5>Home / About</h5>
-            </div>
+        <nav aria-label="breadcrumb" className="mb-4">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">Home</li>
+            <li
+              className="breadcrumb-item active"
+              aria-current="page"
+              style={{ fontWeight: "bold" }}
+            >
+              About
+            </li>
+          </ol>
+        </nav>
           <div className="row">
-            <div className="col-6">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <h2 className="mt-5">Our Story</h2>
               <p className="pe-5 mt-5">
                 Launced in 2015, Exclusive is South Asia’s premier online
@@ -25,8 +36,8 @@ function About() {
                 ranging from consumer.
               </p>
             </div>
-            <div className="col-6">
-              <img src={"/images/about.png"} className="img-fluid" />
+            <div className="col-lg-6 col-md-12 col-sm-12">
+              <img src={"./assets/about.png"} className="img-fluid" alt="AboutImage" />
             </div>
           </div>
         </div>
@@ -35,7 +46,7 @@ function About() {
       <section>
         <div className="container py-5">
           <div className="row" style={{ cursor: "pointer" }}>
-            <div className="col-lg-3 col-md-6 col-sm-12 text-center">
+            <div className="col-lg-3 col-md-6 col-sm-12 text-center mb-3">
               <div className="border border-black py-4">
                 <div className="icon-div bg-black text-light">
                   <svg
@@ -82,21 +93,44 @@ function About() {
                 <p>Sallers active our site</p>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 text-center">
+            <div className="col-lg-3 col-md-6 col-sm-12 text-center mb-3">
               <div className="border border-black py-4 bg-danger text-light">
                 <div className="icon-div bg-light text-light">
-                <svg width="25" height="25" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20.0003 37.2728C29.5397 37.2728 37.273 29.5395 37.273 20C37.273 10.4606 29.5397 2.72729 20.0003 2.72729C10.4608 2.72729 2.72754 10.4606 2.72754 20C2.72754 29.5395 10.4608 37.2728 20.0003 37.2728Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M25.0914 14.547C24.762 13.9758 24.2834 13.505 23.707 13.1848C23.1305 12.8646 22.4777 12.7072 21.8186 12.7294H18.1823C17.2178 12.7294 16.2929 13.1124 15.611 13.7941C14.929 14.4759 14.5459 15.4005 14.5459 16.3647C14.5459 17.3288 14.929 18.2535 15.611 18.9353C16.2929 19.617 17.2178 20 18.1823 20H21.8186C22.783 20 23.708 20.383 24.3899 21.0648C25.0719 21.7465 25.455 22.6712 25.455 23.6354C25.455 24.5995 25.0719 25.5242 24.3899 26.2059C23.708 26.8877 22.783 27.2707 21.8186 27.2707H18.1823C17.5232 27.2929 16.8704 27.1354 16.2939 26.8153C15.7174 26.4951 15.2389 26.0242 14.9095 25.453" stroke="black" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 8.18176V12.1212M20 27.8787V31.8181" stroke="black" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.0003 37.2728C29.5397 37.2728 37.273 29.5395 37.273 20C37.273 10.4606 29.5397 2.72729 20.0003 2.72729C10.4608 2.72729 2.72754 10.4606 2.72754 20C2.72754 29.5395 10.4608 37.2728 20.0003 37.2728Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.0914 14.547C24.762 13.9758 24.2834 13.505 23.707 13.1848C23.1305 12.8646 22.4777 12.7072 21.8186 12.7294H18.1823C17.2178 12.7294 16.2929 13.1124 15.611 13.7941C14.929 14.4759 14.5459 15.4005 14.5459 16.3647C14.5459 17.3288 14.929 18.2535 15.611 18.9353C16.2929 19.617 17.2178 20 18.1823 20H21.8186C22.783 20 23.708 20.383 24.3899 21.0648C25.0719 21.7465 25.455 22.6712 25.455 23.6354C25.455 24.5995 25.0719 25.5242 24.3899 26.2059C23.708 26.8877 22.783 27.2707 21.8186 27.2707H18.1823C17.5232 27.2929 16.8704 27.1354 16.2939 26.8153C15.7174 26.4951 15.2389 26.0242 14.9095 25.453"
+                      stroke="black"
+                      stroke-width="2.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20 8.18176V12.1212M20 27.8787V31.8181"
+                      stroke="black"
+                      stroke-width="2.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </div>
                 <h4 className="my-3">33k</h4>
                 <p>Mopnthly Produduct Sale</p>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 text-center">
+            <div className="col-lg-3 col-md-6 col-sm-12 text-center mb-3">
               <div className="border border-black py-4">
                 <div className="icon-div bg-black text-light">
                   <svg
@@ -143,71 +177,98 @@ function About() {
       {/*our team */}
       <section>
         <div className="container my-5">
-            <div className="row" style={{cursor:"pointer"}}>
-                <div className="col-4">
-                    <div className="card">
-                        <div className="card-image">
-                            <img src="/images/tom.png" style={{width:"60%",height:"391px",margin:"auto",display:"block"}}/>
-                        </div>
-                        <div className="card-body">
-                            <h4>Tom Cruise</h4>
-                            <p>Founder & Chairman</p>
-                            <i className="fab fa-twitter"></i>
-                            <i className="fab fa-instagram mx-3"></i>
-                            <i className="fab fa-linkedin-in"></i>
-                        </div>
-                    </div>
+          <div className="row" style={{ cursor: "pointer" }}>
+            <div className="col-lg-4 col-md-4 col-sm-12 mb-3">
+              <div className="card">
+                <div className="card-image">
+                  <img
+                    src="./assets/tom.png"
+                    style={{
+                      width: "60%",
+                      height: "391px",
+                      margin: "auto",
+                      display: "block",
+                    }}
+                    alt="Tom Cruise"
+                  />
                 </div>
-                <div className="col-4">
-                    <div className="card">
-                        <div className="card-image">
-                            <img src="/images/emma.png" style={{width:"90%",height:"391px",margin:"auto",display:"block"}}/>
-                        </div>
-                        <div className="card-body">
-                            <h4>Emma Watson</h4>
-                            <p>Managing Director</p>
-                            <i className="fab fa-twitter"></i>
-                            <i className="fab fa-instagram mx-3"></i>
-                            <i className="fab fa-linkedin-in"></i>
-                        </div>
-                    </div>
+                <div className="card-body">
+                  <h4>Tom Cruise</h4>
+                  <p>Founder & Chairman</p>
+                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-instagram mx-3"></i>
+                  <i className="fab fa-linkedin-in"></i>
                 </div>
-                <div className="col-4">
-                    <div className="card">
-                        <div className="card-image">
-                            <img src="/images/will.png" style={{width:"90%",height:"391px",margin:"auto",display:"block"}}/>
-                        </div>
-                        <div className="card-body">
-                            <h4>Will Smith</h4>
-                            <p>Product Designer</p>
-                            <i className="fab fa-twitter"></i>
-                            <i className="fab fa-instagram mx-3"></i>
-                            <i className="fab fa-linkedin-in"></i>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div className="col-lg-4 col-md-4 col-sm-12 mb-3">
+              <div className="card">
+                <div className="card-image">
+                  <img
+                    src="./assets/emma.png"
+                    style={{
+                      width: "90%",
+                      height: "391px",
+                      margin: "auto",
+                      display: "block",
+                    }}
+                    alt="Emma Watson"
+                  />
+                </div>
+                <div className="card-body">
+                  <h4>Emma Watson</h4>
+                  <p>Managing Director</p>
+                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-instagram mx-3"></i>
+                  <i className="fab fa-linkedin-in"></i>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4 col-sm-12 mb-3">
+              <div className="card">
+                <div className="card-image">
+                  <img
+                    src="./assets/will.png"
+                    style={{
+                      width: "90%",
+                      height: "391px",
+                      margin: "auto",
+                      display: "block",
+                    }}
+                    alt="Will Smith"
+                  />
+                </div>
+                <div className="card-body">
+                  <h4>Will Smith</h4>
+                  <p>Product Designer</p>
+                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-instagram mx-3"></i>
+                  <i className="fab fa-linkedin-in"></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       {/* our services */}
       <section>
         <div className="container my-5">
           <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-12 text-center">
+            <div className="col-lg-4 col-md-4 col-sm-12 text-center mb-3">
               <div className="icon-div bg-black text-light">
                 <i className="fas fa-truck"></i>
               </div>
               <h4 className="my-3">FREE AND FAST DELIVERY</h4>
               <p>Free delivery for all orders over $140</p>
             </div>
-            <div className="col-lg-4 col-md-4 col-sm-12 text-center">
+            <div className="col-lg-4 col-md-4 col-sm-12 text-center mb-3">
               <div className="icon-div bg-black text-light">
                 <i className="fas fa-headphones"></i>
               </div>
               <h4 className="my-3">24/7 CUSTOMER SERVICE</h4>
               <p>Friendly 24/7 customer support</p>
             </div>
-            <div className="col-lg-4 col-md-4 col-sm-12 text-center">
+            <div className="col-lg-4 col-md-4 col-sm-12 text-center mb-3">
               <div className="icon-div bg-black text-light">
                 <i className="far fa-check-circle"></i>
               </div>
@@ -217,6 +278,7 @@ function About() {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }
