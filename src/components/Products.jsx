@@ -5,6 +5,7 @@ import { addToCart, removeFromCart } from "../redux/ProductsSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToFav, removeFromFav } from "../redux/FavouritesSlice";
+import { Link } from "react-router-dom";
 function Products() {
   const { products } = useContext(ProductsContext);
   const cartProducts=useSelector((state)=>state.cart.cartProducts)
@@ -108,9 +109,9 @@ function Products() {
                         <i class="far fa-heart"></i>
                       </span>
                     )}
-                    <span className="text-dark" style={{ cursor: "pointer" }}>
-                      <i class="far fa-eye"></i>
-                    </span>
+                   <Link to={`/product/${product.id}`} className="text-dark" style={{ cursor: "pointer" }}>
+                                         <i class="far fa-eye"></i>
+                                       </Link>
                   </div>
                   <div className="card-body">
                     <h5 className="card-title">{product.title}</h5>

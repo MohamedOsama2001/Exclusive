@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import './all.css';
-import { About, Account, Cart, Checkout, Contact, Home, Login, Orders, SignUp, Whishlist, } from "./pages";
+import { About, Account, Cart, Checkout, Contact, Home, Login, Orders, Product, SignUp, Whishlist, } from "./pages";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
       <Route path="/favourites" element={<Whishlist/>}/>
       <Route path="/orders" element={<Orders/>}/>
       <Route path="/myaccount" element={<Account/>}/>
+      <Route path="/product/:id" element={<Product/>}/>
     </Routes>
     </BrowserRouter>
   );
